@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" onclick="jump()">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #context{
+            border: 1px solid blue;
+            height: 423px;
+            width: 927px;
+            overflow: hidden;
+        } 
+        #lion{
+            position: absolute;
+            left: 33pc;
+            top: 202px;
+        }
+        .jump{
+            animation: jump 500ms;
+        }
+        @keyframes jump{
+            0%{top: 0;}
+            100%{top: 100px;}
+        }
+        #block{
+            height: 80px;
+            width: 80px;
+            background-color: black;
+            position: absolute;
+            top: 352px;
+            animation: move 1s linear infinite;
+        }
+        @keyframes move{
+            0%{left: 0px;}
+            100%{left: 900px;}
+        }
+    </style>
+</head>
+<body>
+    <div Id="context">
+            <img id="lion" src="image/Running Lion.gif">
+        <div id="block"></div>
+    </div>
+</body>
+<script>
+    var lion=document.getElementById("lion");
+    var block =document.getElementById("block")
+    function jump(){
+        lion.classList.add("jump")
+        setInterval(function(){
+            lion.classList.remove("jump")
+        },500)
+    }
+</script>
+</html>
