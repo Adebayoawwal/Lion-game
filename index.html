@@ -46,20 +46,26 @@
             background-color: yellow;
             position: absolute;
             left: 33%;
-            box-shadow: 12px yellow;
+            box-shadow: 1px 1px 39px 10px yellow;
         }
         .land{
             border: 1px solid green;
             height: 120px;
             background-color: green;
             position: relative;
-            top: 25pc;
+            top: 5pc;
+        }
+        .tree{
+            position: relative;
+            height: 325px;
+            top: 83px;
         }
     </style>
 </head>
 <body>
     <div Id="context">
         <div class="sun"></div>
+        <img class="tree" src="image/tree.png">
             <img id="lion" src="image/Running Lion.gif">
         <div id="block"></div>
         <div class="land"></div>
@@ -69,10 +75,18 @@
     var lion=document.getElementById("lion");
     var block =document.getElementById("block")
     function jump(){
-        lion.classList.add("jump")
+        if(lion.classList != "jump"){
+            lion.classList.add("jump")
+        }
         setInterval(function(){
             lion.classList.remove("jump")
         },500)
+
+        if( lion<=190){
+            block.style.animation="none";
+            block.style.display="none";
+            alert("you loss")
+        }
     }
 </script>
 </html>
