@@ -7,9 +7,9 @@
     <style>
         #context{
             border: 1px solid blue;
-            background-color: rgb(73, 76, 255);
+            background-color: rgb(19, 23, 253);
             height: 523px;
-            width: 927px;
+            width: 987px;
             overflow: hidden;
         } 
         #lion{
@@ -40,17 +40,18 @@
         }
         .sun{
             border: 1px solid yellow;
-            height: 130px;
-            width: 130px;
+            height: 100px;
+            width: 100px;
             border-radius: 50%;
             background-color: yellow;
             position: absolute;
-            left: 33%;
-            box-shadow: 1px 1px 39px 10px yellow;
+            left: 25%;
+            top: 30px;
+            box-shadow: 1px 1px 39px 20px yellow;
         }
         .land{
             border: 1px solid green;
-            height: 120px;
+            height: 110px;
             background-color: green;
             position: relative;
             top: 5pc;
@@ -58,7 +59,16 @@
         .tree{
             position: relative;
             height: 325px;
-            top: 83px;
+            top: 84px;
+            animation: tm 5s linear infinite;
+        }
+        @keyframes tm{
+          0%{
+            left: +20px;
+          }
+          100%{
+            left: 1900px;
+          }
         }
     </style>
 </head>
@@ -82,11 +92,12 @@
             lion.classList.remove("jump")
         },500)
 
-        if( lion<=190){
+    }
+    
+    if(block=0 && block==20 && lion<=190){
             block.style.animation="none";
             block.style.display="none";
             alert("you loss")
         }
-    }
 </script>
 </html>
