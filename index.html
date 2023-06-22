@@ -7,7 +7,8 @@
     <style>
         #context{
             border: 1px solid blue;
-            height: 423px;
+            background-color: rgb(73, 76, 255);
+            height: 523px;
             width: 927px;
             overflow: hidden;
         } 
@@ -20,8 +21,10 @@
             animation: jump 500ms;
         }
         @keyframes jump{
-            0%{top: 0;}
-            100%{top: 100px;}
+            0%{top: 150px;}
+            30%{top: 100px;}
+            70%{top: 100px;}
+            100%{top: 150px;}
         }
         #block{
             height: 80px;
@@ -35,22 +38,55 @@
             0%{left: 0px;}
             100%{left: 900px;}
         }
+        .sun{
+            border: 1px solid yellow;
+            height: 130px;
+            width: 130px;
+            border-radius: 50%;
+            background-color: yellow;
+            position: absolute;
+            left: 33%;
+            box-shadow: 1px 1px 39px 10px yellow;
+        }
+        .land{
+            border: 1px solid green;
+            height: 120px;
+            background-color: green;
+            position: relative;
+            top: 5pc;
+        }
+        .tree{
+            position: relative;
+            height: 325px;
+            top: 83px;
+        }
     </style>
 </head>
 <body>
     <div Id="context">
+        <div class="sun"></div>
+        <img class="tree" src="image/tree.png">
             <img id="lion" src="image/Running Lion.gif">
         <div id="block"></div>
+        <div class="land"></div>
     </div>
 </body>
 <script>
     var lion=document.getElementById("lion");
     var block =document.getElementById("block")
     function jump(){
-        lion.classList.add("jump")
+        if(lion.classList != "jump"){
+            lion.classList.add("jump")
+        }
         setInterval(function(){
             lion.classList.remove("jump")
         },500)
+
+        if( lion<=190){
+            block.style.animation="none";
+            block.style.display="none";
+            alert("you loss")
+        }
     }
 </script>
 </html>
