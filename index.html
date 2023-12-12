@@ -8,35 +8,35 @@
         #context{
             border: 1px solid blue;
             background-color: rgb(19, 23, 253);
-            height: 523px;
-            width: 987px;
+            height: 628px;
+            width: 99vw;
             overflow: hidden;
         } 
         #lion{
             position: absolute;
-            left: 33pc;
-            top: 202px;
+            left: 56pc;
+            top: 302px;
         }
         .jump{
             animation: jump 500ms;
         }
         @keyframes jump{
-            0%{top: 150px;}
-            30%{top: 100px;}
-            70%{top: 100px;}
-            100%{top: 150px;}
+            0%{top: 250px;}
+    30%{top: 20px;}
+    70%{top: 20px;}
+    100%{top: 150px;}
         }
         #block{
             height: 80px;
             width: 80px;
             background-color: black;
             position: absolute;
-            top: 352px;
+            top: 452px;
             animation: move 1s linear infinite;
         }
         @keyframes move{
-            0%{left: 0px;}
-            100%{left: 900px;}
+            0%{left: 0;}
+            100%{left: 1265px;}
         }
         .sun{
             border: 1px solid yellow;
@@ -54,12 +54,12 @@
             height: 110px;
             background-color: green;
             position: relative;
-            top: 5pc;
+            top: 12pc;
         }
         .tree{
             position: relative;
             height: 325px;
-            top: 84px;
+            top: 196px;
             animation: tm 5s linear infinite;
         }
         @keyframes tm{
@@ -81,23 +81,5 @@
         <div class="land"></div>
     </div>
 </body>
-<script>
-    var lion=document.getElementById("lion");
-    var block =document.getElementById("block")
-    function jump(){
-        if(lion.classList != "jump"){
-            lion.classList.add("jump")
-        }
-        setInterval(function(){
-            lion.classList.remove("jump")
-        },500)
-
-    }
-    
-    if(block=0 && block==20 && lion<=190){
-            block.style.animation="none";
-            block.style.display="none";
-            alert("you loss")
-        }
-</script>
+<script src="script.js"></script>
 </html>
